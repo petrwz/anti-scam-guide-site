@@ -1,4 +1,4 @@
-import { scams } from "../data/scams.js";
+import { scams } from "../data/scams.js?v=articles-20260520";
 
 const container = document.querySelector("#scheme-detail");
 const params = new URLSearchParams(window.location.search);
