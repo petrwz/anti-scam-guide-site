@@ -409,3 +409,43 @@ h3 {
     padding-top: 34px;
   }
 }
+
+
+/* Moderate danger accents */
+:root {
+    --danger: #b9413b;
+    --danger-dark: #8f2d2a;
+    --danger-soft: #fff1ef;
+}
+
+.brand__mark {
+    background: var(--danger);
+}
+
+.eyebrow {
+    color: var(--danger);
+}
+
+.hero__panel {
+    border-color: rgba(185, 65, 59, 0.22);
+    border-left: 5px solid var(--danger);
+}
+
+.hero__panel div:first-child {
+    background: var(--danger-soft);
+}
+
+.hero__panel strong {
+    color: var(--danger-dark);
+}
+
+.advice-panel h2:first-child::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 9px;
+    border-radius: 50%;
+    background: var(--danger);
+    vertical-align: 0.08em;
+}
