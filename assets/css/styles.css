@@ -353,6 +353,18 @@ h3 {
   color: #26342c;
 }
 
+.article__subheading {
+  margin: 32px 0 14px;
+  color: #173466;
+  font-size: 1.32rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.article__subheading:first-child {
+  margin-top: 0;
+}
+
 .article p:last-child {
   margin-bottom: 0;
 }

@@ -1,4 +1,4 @@
-import { scams } from "../data/scams.js?v=articles-20260520";
+import { scams } from "../data/scams.js?v=articles-20260522b";
 
 const cardsGrid = document.querySelector("#cards-grid");
 
