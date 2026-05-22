@@ -55,7 +55,7 @@ function renderNotFound() {
 
 function renderDetail(item) {
   const pageUrl = `${SITE_URL}/scheme.html?id=${encodeURIComponent(item.slug)}`;
-  const pageTitle = `${item.title} | НетОбмана.рф`;
+  const pageTitle = `${item.title} | НетОбману.рф`;
 
   document.title = pageTitle;
   updateMeta("#meta-description", item.shortDescription);
