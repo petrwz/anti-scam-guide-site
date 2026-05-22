@@ -435,6 +435,92 @@ h3 {
   padding: 56px 0;
 }
 
+.comments {
+  display: grid;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.comments__header p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.comments__list {
+  display: grid;
+  gap: 14px;
+}
+
+.comment,
+.comment-form {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.comment {
+  padding: 18px 20px;
+}
+
+.comment__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.comment__meta strong {
+  font-size: 1rem;
+  color: #173466;
+}
+
+.comment__meta span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.comment p {
+  margin: 0;
+  color: #26342c;
+}
+
+.comment-form {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.comment-form__label {
+  font-weight: 800;
+  color: #173466;
+}
+
+.comment-form__field {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfcfa;
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.comment-form__field::placeholder {
+  color: #7c8a81;
+}
+
+.comment-form .button {
+  background: #2f6fbe;
+}
+
+.comment-form .button:hover,
+.comment-form .button:focus-visible {
+  background: #173466;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 24px 16px;
@@ -499,8 +585,13 @@ h3 {
   }
 
   .article,
-  .advice-panel {
+  .advice-panel,
+  .comment-form {
     padding: 20px;
+  }
+
+  .comment {
+    padding: 16px 18px;
   }
 
   .detail-layout {

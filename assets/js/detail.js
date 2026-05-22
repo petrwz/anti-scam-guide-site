@@ -1,4 +1,5 @@
 import { scams } from "../data/scams.js?v=articles-20260522b";
+import { commentsBySlug } from "../data/comments.js";
 
 const SITE_URL = "https://xn--80abl3aced5ao.xn--p1ai";
 const container = document.querySelector("#scheme-detail");
@@ -43,6 +44,22 @@ function updateCanonical(url) {
   }
 }
 
+function renderComments(comments = []) {
+  return comments
+    .map(
+      (comment) => `
+        <article class="comment">
+          <div class="comment__meta">
+            <strong>${comment.author}</strong>
+            <span>${comment.date}</span>
+          </div>
+          <p>${comment.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+}
+
 function renderNotFound() {
   container.innerHTML = `
     <section class="not-found">
@@ -80,6 +97,29 @@ function renderDetail(item) {
       <article class="article">
         ${item.articleBlocks ? renderArticleBlocks(item.articleBlocks) : renderParagraphs(item.fullText)}
       </article>
+    </section>
+
+    <section class="comments" aria-labelledby="comments-title">
+      <div class="comments__header">
+        <h2 id="comments-title">Комментарии</h2>
+        <p>Люди делятся опытом и пересылают материалы близким, чтобы те не попадались на похожие схемы.</p>
+      </div>
+
+      <div class="comments__list">
+        ${renderComments(commentsBySlug[item.slug] ?? [])}
+      </div>
+
+      <form class="comment-form" action="#" method="post">
+        <label class="comment-form__label" for="comment-text">Оставить комментарий</label>
+        <textarea
+          id="comment-text"
+          class="comment-form__field"
+          name="comment"
+          rows="4"
+          placeholder="Поделитесь своим опытом или отправьте короткий отзыв"
+        ></textarea>
+        <button class="button" type="button">Оставить комментарий</button>
+      </form>
     </section>
   `;
 }
