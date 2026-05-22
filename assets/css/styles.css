@@ -143,6 +143,49 @@ h3 {
   font-size: 1.13rem;
 }
 
+.filters {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 0 0 18px;
+}
+
+.filters__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-chip {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(185, 65, 59, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4a5a50;
+  font: inherit;
+  font-size: 0.96rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.filter-chip:hover,
+.filter-chip:focus-visible {
+  border-color: rgba(185, 65, 59, 0.45);
+  color: #173466;
+  transform: translateY(-1px);
+}
+
+.filter-chip--active {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger-dark);
+}
+
 .hero__panel {
   display: grid;
   gap: 12px;
@@ -422,6 +465,7 @@ h3 {
   }
 
   .hero,
+  .filters,
   .intro,
   .section,
   .detail-layout {
@@ -432,6 +476,14 @@ h3 {
     gap: 22px;
     padding-top: 22px;
     padding-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 4.8vw, 3.8rem);
+  }
+
+  .filters {
+    padding-bottom: 14px;
   }
 
   .section {
