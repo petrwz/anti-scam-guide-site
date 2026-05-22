@@ -461,7 +461,11 @@ h3 {
 @media (max-width: 620px) {
   .nav {
     width: min(100% - 10px, 1120px);
-    padding: 12px 0;
+    padding: 8px 0;
+  }
+
+  .brand__mark-image {
+    margin-left: -14px;
   }
 
   .hero,
