@@ -7,12 +7,13 @@ function createCard(scam) {
   card.className = "card";
 
   card.innerHTML = `
-    <img class="card__image" src="${scam.image}" alt="${scam.imageAlt}" loading="lazy">
-    <div class="card__body">
-      <h3>${scam.title}</h3>
-      <p>${scam.shortDescription}</p>
-      <a class="button" href="./scheme.html?id=${encodeURIComponent(scam.slug)}">Подробнее</a>
-    </div>
+    <a class="card__link" href="./scheme.html?id=${encodeURIComponent(scam.slug)}" aria-label="${scam.title}">
+      <img class="card__image" src="${scam.image}" alt="${scam.imageAlt}" loading="lazy">
+      <div class="card__body">
+        <h3>${scam.title}</h3>
+        <p>${scam.shortDescription}</p>
+      </div>
+    </a>
   `;
 
   return card;

@@ -59,20 +59,27 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
+  gap: 12px;
   text-decoration: none;
 }
 
-.brand__mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 900;
+.brand__mark-image {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+}
+
+.brand__text {
+  display: flex;
+  align-items: center;
+}
+
+.brand__title {
+  color: #173466;
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .nav__link {
@@ -200,8 +207,6 @@ h3 {
 }
 
 .card {
-  display: flex;
-  min-height: 100%;
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -210,8 +215,23 @@ h3 {
   box-shadow: 0 10px 24px rgba(29, 50, 42, 0.06);
 }
 
+.card__link {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.card:hover .card__link,
+.card:focus-within .card__link {
+  transform: translateY(-2px);
+}
+
 .card__image {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 7;
   width: 100%;
   object-fit: cover;
   background: var(--surface-muted);
@@ -228,6 +248,11 @@ h3 {
 .card__body p {
   margin: 0;
   color: var(--muted);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
 .button {
@@ -410,42 +435,51 @@ h3 {
   }
 }
 
-
-/* Moderate danger accents */
 :root {
-    --danger: #b9413b;
-    --danger-dark: #8f2d2a;
-    --danger-soft: #fff1ef;
-}
-
-.brand__mark {
-    background: var(--danger);
+  --danger: #b9413b;
+  --danger-dark: #8f2d2a;
+  --danger-soft: #fff1ef;
 }
 
 .eyebrow {
-    color: var(--danger);
+  color: var(--danger);
 }
 
 .hero__panel {
-    border-color: rgba(185, 65, 59, 0.22);
-    border-left: 5px solid var(--danger);
+  border-color: rgba(185, 65, 59, 0.22);
+  border-left: 5px solid var(--danger);
 }
 
 .hero__panel div:first-child {
-    background: var(--danger-soft);
+  background: var(--danger-soft);
 }
 
 .hero__panel strong {
-    color: var(--danger-dark);
+  color: var(--danger-dark);
 }
 
 .advice-panel h2:first-child::before {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-right: 9px;
-    border-radius: 50%;
-    background: var(--danger);
-    vertical-align: 0.08em;
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--danger);
+  vertical-align: 0.08em;
+}
+
+@media (max-width: 620px) {
+  .brand {
+    gap: 10px;
+  }
+
+  .brand__mark-image {
+    width: 72px;
+    height: 72px;
+  }
+
+  .brand__title {
+    font-size: 1.15rem;
+  }
 }
